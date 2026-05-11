@@ -1,0 +1,1 @@
+function c({editor:o,name:a,category:n="Sections",media:r,model:t={}}){var e=`${n}-${a}`;o.DomComponents.addType(e,{model:{...t}}),o.BlockManager.add(e,{label:a.replace(/[-_]/g," ").replace(/\b\w/g,p=>p.toUpperCase()),category:n.replace(/[-_]/g," ").replace(/\b\w/g,p=>p.toUpperCase()),media:r,content:{type:e}})}export{c as r};

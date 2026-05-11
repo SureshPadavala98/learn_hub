@@ -9,6 +9,7 @@ use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\CheckOutController;
 use App\Http\Controllers\Frontend\FavoriteController;
 use App\Http\Controllers\Frontend\HomePageController;
+use App\Http\Controllers\Frontend\PlacementController;
 use App\Http\Controllers\Frontend\LearningController;
 use App\Http\Controllers\Frontend\AboutPageController;
 use App\Http\Controllers\Frontend\CoursePageController;
@@ -73,6 +74,7 @@ Route::group(['middleware' => 'maintenance.mode'], function () {
     /** Contact page routes */
     Route::get('contact', [ContactController::class, 'index'])->name('contact.index');
     Route::post('contact/send-mail', [ContactController::class, 'sendMail'])->name('contact.send-mail');
+    Route::get('placements', [PlacementController::class, 'index'])->name('placements.index');
 
     /** other routes */
     Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['auth:admin'], 'as' => 'admin.'], function () {

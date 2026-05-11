@@ -103,6 +103,9 @@
                             </div>
                             <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-xl-flex">
                                 @if ($nav_menu)
+                                    @php
+                                        $placementMenuRendered = false;
+                                    @endphp
                                     <ul class="navigation">
                                         @foreach ($nav_menu->menuItems as $menu)
                                             @if ($menu?->link == '/' && $setting?->show_all_homepage == 1)
@@ -132,7 +135,29 @@
                                                     @endif
                                                 </li>
                                             @endif
+                                            @if (trim((string) $menu?->link, '/') === 'contact')
+                                                @php
+                                                    $placementMenuRendered = true;
+                                                @endphp
+                                                <li class="{{ Route::is('placements.index') ? 'active' : '' }}">
+                                                    <a href="{{ route('placements.index') }}"
+                                                        title="">{{ __('Placements') }}</a>
+                                                </li>
+                                            @endif
                                         @endforeach
+                                        @unless ($placementMenuRendered)
+                                            <li class="{{ Route::is('placements.index') ? 'active' : '' }}">
+                                                <a href="{{ route('placements.index') }}"
+                                                    title="">{{ __('Placements') }}</a>
+                                            </li>
+                                        @endunless
+                                    </ul><!-- /.menu -->
+                                @else
+                                    <ul class="navigation">
+                                        <li class="{{ Route::is('placements.index') ? 'active' : '' }}">
+                                            <a href="{{ route('placements.index') }}"
+                                                title="">{{ __('Placements') }}</a>
+                                        </li>
                                     </ul><!-- /.menu -->
                                 @endif
 

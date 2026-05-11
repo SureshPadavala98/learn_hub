@@ -81,6 +81,11 @@
                     <span>{{ __('Placement Students') }}</span>
                 </a>
             </li>
+            <li class="{{ isRoute('admin.certificates.*', 'active') }}">
+                <a class="nav-link" href="{{ route('admin.certificates.index') }}"><i class="fas fa-certificate"></i>
+                    <span>{{ __('Certificates') }}</span>
+                </a>
+            </li>
 
             @if(checkAdminHasPermission('appearance.management') || checkAdminHasPermission('section.management') || checkAdminHasPermission('footer.management') || checkAdminHasPermission('brand.managemen'))
                 <li class="menu-header">{{ __('Site Contents') }}</li>

@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\RolesController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\CandidateCertificateController;
 use App\Http\Controllers\Admin\CandidatePlacementController;
 use App\Http\Controllers\Global\CloudStorageController;
 use App\Http\Controllers\Admin\Auth\NewPasswordController;
@@ -41,6 +42,7 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin'], function () {
         Route::resource('/role', RolesController::class);
         Route::resource('/role', RolesController::class);
         Route::resource('placements', CandidatePlacementController::class)->except('show');
+        Route::resource('certificates', CandidateCertificateController::class)->except('show');
     });
     Route::resource('admin', AdminController::class)->except('show');
     Route::put('admin-status/{id}', [AdminController::class, 'changeStatus'])->name('admin.status');

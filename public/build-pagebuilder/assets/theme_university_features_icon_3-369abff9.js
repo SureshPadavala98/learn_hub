@@ -1,0 +1,1 @@
+const e=""+new URL("theme_university_features_icon_1-b17be808.svg",import.meta.url).href,t=""+new URL("theme_university_features_icon_2-6959242d.svg",import.meta.url).href,r=""+new URL("theme_university_features_icon_3-8989efa9.svg",import.meta.url).href;export{t as a,r as b,e as f};

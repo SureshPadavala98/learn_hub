@@ -143,12 +143,20 @@
                                                     <a href="{{ route('placements.index') }}"
                                                         title="">{{ __('Placements') }}</a>
                                                 </li>
+                                                <li class="{{ Route::is('certificates.index') ? 'active' : '' }}">
+                                                    <a href="{{ route('certificates.index') }}"
+                                                        title="">{{ __('Certificates') }}</a>
+                                                </li>
                                             @endif
                                         @endforeach
                                         @unless ($placementMenuRendered)
                                             <li class="{{ Route::is('placements.index') ? 'active' : '' }}">
                                                 <a href="{{ route('placements.index') }}"
                                                     title="">{{ __('Placements') }}</a>
+                                            </li>
+                                            <li class="{{ Route::is('certificates.index') ? 'active' : '' }}">
+                                                <a href="{{ route('certificates.index') }}"
+                                                    title="">{{ __('Certificates') }}</a>
                                             </li>
                                         @endunless
                                     </ul><!-- /.menu -->
@@ -157,6 +165,10 @@
                                         <li class="{{ Route::is('placements.index') ? 'active' : '' }}">
                                             <a href="{{ route('placements.index') }}"
                                                 title="">{{ __('Placements') }}</a>
+                                        </li>
+                                        <li class="{{ Route::is('certificates.index') ? 'active' : '' }}">
+                                            <a href="{{ route('certificates.index') }}"
+                                                title="">{{ __('Certificates') }}</a>
                                         </li>
                                     </ul><!-- /.menu -->
                                 @endif

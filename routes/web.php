@@ -7,6 +7,7 @@ use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\CheckOutController;
+use App\Http\Controllers\Frontend\CertificateController;
 use App\Http\Controllers\Frontend\FavoriteController;
 use App\Http\Controllers\Frontend\HomePageController;
 use App\Http\Controllers\Frontend\PlacementController;
@@ -75,6 +76,7 @@ Route::group(['middleware' => 'maintenance.mode'], function () {
     Route::get('contact', [ContactController::class, 'index'])->name('contact.index');
     Route::post('contact/send-mail', [ContactController::class, 'sendMail'])->name('contact.send-mail');
     Route::get('placements', [PlacementController::class, 'index'])->name('placements.index');
+    Route::get('certificates', [CertificateController::class, 'index'])->name('certificates.index');
 
     /** other routes */
     Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['auth:admin'], 'as' => 'admin.'], function () {

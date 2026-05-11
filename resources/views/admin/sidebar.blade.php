@@ -75,6 +75,13 @@
                 @endif
             @endif
 
+            <li class="menu-header">{{ __('Manage Placements') }}</li>
+            <li class="{{ isRoute('admin.placements.*', 'active') }}">
+                <a class="nav-link" href="{{ route('admin.placements.index') }}"><i class="fas fa-user-graduate"></i>
+                    <span>{{ __('Placement Students') }}</span>
+                </a>
+            </li>
+
             @if(checkAdminHasPermission('appearance.management') || checkAdminHasPermission('section.management') || checkAdminHasPermission('footer.management') || checkAdminHasPermission('brand.managemen'))
                 <li class="menu-header">{{ __('Site Contents') }}</li>
                 @if (Module::isEnabled('SiteAppearance') && checkAdminHasPermission('appearance.management'))
